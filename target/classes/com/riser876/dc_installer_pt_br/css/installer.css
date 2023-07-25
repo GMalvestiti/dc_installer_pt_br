@@ -1,0 +1,8 @@
+﻿#paneInstall {
+    -fx-background-color: white;
+}
+
+#paneLogo {
+    -fx-background-color: purple;
+    -fx-border-color: purple;
+}
