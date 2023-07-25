@@ -32,7 +32,7 @@ public class App extends Application {
 
     private void prepareStage() throws IOException {
         App.stage.setTitle("Instalador - Tradução DawnCraft PT-BR");
-        App.stage.getIcons().addAll(new Image(getClass().getResourceAsStream("/assets/img/icon.png")));
+        App.stage.getIcons().addAll(new Image(getClass().getResource("img/icon.png").toExternalForm()));
         App.stage.setScene(scene);
         App.stage.show();
     }
