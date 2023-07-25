@@ -2,7 +2,10 @@ package com.riser876.dc_installer_pt_br;
 
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
+import javafx.scene.control.Alert;
 import javafx.fxml.FXML;
+
+import util.CustomAlert;
 
 public class InstallerController {
 
@@ -18,5 +21,19 @@ public class InstallerController {
         tfPath.setFocusTraversable(false);
         btnSelectDirectory.setFocusTraversable(false);
         btnInstall.setFocusTraversable(false);
+    }
+
+    @FXML
+    private void setInitialPath() {
+        try {
+            
+        } catch (Exception e) {
+            new CustomAlert("Erro", e.getMessage(), Alert.AlertType.ERROR);
+        }
+    }
+
+    @FXML
+    private void selectDirectory() {
+        setInitialPath();
     }
 }
