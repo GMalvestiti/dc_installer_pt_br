@@ -10,10 +10,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import com.riser876.data.InstallerData;
+
 public class App extends Application {
 
     private static Scene scene;
     private static Stage stage;
+    public static DataHandler dataHandler;
+    public static InstallerData installerData;
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -21,10 +25,11 @@ public class App extends Application {
             Parent root = FXMLLoader.load(getClass().getResource("installer.fxml"));
 
             App.scene = new Scene(root);
-            App.scene.getStylesheets().add(getClass().getResource("css/installer.css").toExternalForm());
+            App.scene.getStylesheets().add(this.getPath("css/installer.css"));
 
             App.stage = primaryStage;
             this.prepareStage();
+            this.handler();
         } catch(Exception e) {
             e.printStackTrace();
         }
@@ -32,9 +37,22 @@ public class App extends Application {
 
     private void prepareStage() throws IOException {
         App.stage.setTitle("Instalador - Tradução DawnCraft PT-BR");
-        App.stage.getIcons().addAll(new Image(getClass().getResource("img/icon.png").toExternalForm()));
+        App.stage.getIcons().addAll(new Image(this.getPath("img/icon.png")));
         App.stage.setScene(scene);
         App.stage.show();
+    }
+
+    private String getPath(String path) {
+        return getClass().getResource(path).toExternalForm();
+    }
+
+    private void handler() {
+        App.dataHandler = new DataHandler(this.getPath("data/installer.json"));
+        App.installerData = App.dataHandler.loadData();
+    }
+
+    public static void save() {
+        App.dataHandler.writeData(installerData);
     }
 
     public static void main(String[] args) {

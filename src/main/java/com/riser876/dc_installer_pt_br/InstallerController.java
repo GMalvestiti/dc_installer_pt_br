@@ -3,9 +3,10 @@ package com.riser876.dc_installer_pt_br;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.scene.control.Alert;
-import javafx.fxml.FXML;
 
-import util.CustomAlert;
+import com.riser876.util.CustomAlert;
+
+import javafx.fxml.FXML;
 
 public class InstallerController {
 
@@ -34,6 +35,8 @@ public class InstallerController {
 
     @FXML
     private void selectDirectory() {
-        setInitialPath();
+        System.out.println(App.installerData.getVersion());
+        App.installerData.setVersion("1.0");
+        App.save();
     }
 }
