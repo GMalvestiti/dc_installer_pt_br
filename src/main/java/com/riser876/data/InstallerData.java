@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class InstallerData implements Serializable{
     private String version;
     private String latestVersion;
+    private String installFolder;
 
     public InstallerData(String version, String latestVersion) {
         this.version = version;
@@ -25,5 +26,13 @@ public class InstallerData implements Serializable{
 
     public void setLatestVersion(String latestVersion) {
         this.latestVersion = latestVersion;
+    }
+
+    public String getInstallFolder() {
+        return this.installFolder;
+    }
+
+    public void setInstallFolder(String installFolder) {
+        this.installFolder = installFolder;
     }
 }
