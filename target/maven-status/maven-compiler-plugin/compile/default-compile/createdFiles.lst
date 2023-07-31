@@ -1,0 +1,7 @@
+com\riser876\dc_installer_pt_br\DataHandler.class
+com\riser876\dc_installer_pt_br\Installer.class
+com\riser876\data\InstallerData.class
+module-info.class
+com\riser876\dc_installer_pt_br\InstallerController.class
+com\riser876\util\CustomAlert.class
+com\riser876\dc_installer_pt_br\App.class

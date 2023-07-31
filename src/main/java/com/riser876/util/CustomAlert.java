@@ -1,4 +1,4 @@
-﻿package com.riser876.util;
+package com.riser876.util;
 
 import javafx.scene.control.Alert;
 

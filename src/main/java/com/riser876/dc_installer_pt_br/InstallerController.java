@@ -35,8 +35,10 @@ public class InstallerController {
 
     @FXML
     private void selectDirectory() {
-        System.out.println(App.installerData.getVersion());
-        App.installerData.setVersion("1.0");
+        String version = tfPath.getText();
+        tfPath.setText("");
+        App.installerData.setVersion(version);
         App.save();
+        new CustomAlert("Confirmação", App.installerData.getVersion(), Alert.AlertType.INFORMATION);
     }
 }

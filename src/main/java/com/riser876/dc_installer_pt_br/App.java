@@ -16,7 +16,7 @@ public class App extends Application {
 
     private static Scene scene;
     private static Stage stage;
-    public static DataHandler dataHandler;
+    private static DataHandler dataHandler;
     public static InstallerData installerData;
 
     @Override
@@ -47,12 +47,13 @@ public class App extends Application {
     }
 
     private void handler() {
-        App.dataHandler = new DataHandler(this.getPath("data/installer.json"));
+        App.dataHandler = new DataHandler("data/installer.json");
         App.installerData = App.dataHandler.loadData();
     }
 
     public static void save() {
         App.dataHandler.writeData(installerData);
+        App.dataHandler.loadData();
     }
 
     public static void main(String[] args) {
